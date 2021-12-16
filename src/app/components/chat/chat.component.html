@@ -1,0 +1,37 @@
+<div class="row chat">
+    <div *ngFor="let chat of chatWindow" class="chat-window col-md-3">
+        <div class="chat-block">
+            <div class="header">
+                {{chat.name}}
+            </div>
+            <div class="chat-body">
+                <div *ngFor="let msg of chat?.messages" class="chat-msg-block">
+                    <div>
+                        {{msg?.text}}
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <input type="text" [(ngModel)]="chat.inputText">
+                <button type="button" class="btn btn-primary" (click)="onSendClick(chat)">Send</button>
+            </div>
+        </div>
+    </div>
+    <div class="chat-btn-div col-md-3">
+        <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+          <ngb-panel id="static-2">
+          <ng-template ngbPanelTitle>
+            <span><b>Frients</b></span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <ul class="frient-list">
+                <li *ngFor="let frient of frientList" (click)="showUserChat(frient)">
+                    <span class="user-img">{{frient?.name.charAt(0)}}</span>
+                    {{frient?.name}}
+                </li>
+            </ul>
+          </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+.chat {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.chat-btn-div {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.frient-list {
+    padding: 0;
+    li {
+        list-style: none;
+        border-bottom: 1px solid grey;
+        padding: 8px 0;
+        cursor: pointer;
+        &:last-child {
+            border-bottom-color: transparent;
+        }
+        .user-img {
+            border: 2px solid gray;
+            border-radius: 25px;
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            text-align: center;
+            margin-left: 16px;
+        }
+    }
+}
+
+.chat-window {
+    height: 300px;
+    .chat-block {
+        border: 1px solid grey;
+        height: 100%;
+    }
+    .header {
+        background-color: #343a40;
+        color: #fff;
+        height: 45px;
+        padding: 0 16px;
+        line-height: 45px;
+    }
+    .chat-body {
+        .chat-msg-block {
+            box-shadow: 0px 0px 12px #00000012;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        input[type="text"] {
+            height: 38px;
+            margin: 0 12px 12px 0;
+        }
+    }
+}
+
+::ng-deep {
+    .card-header {
+        padding-left: 4px;
+    }
+    .card-body {
+        padding: 0;
+    }
+}
